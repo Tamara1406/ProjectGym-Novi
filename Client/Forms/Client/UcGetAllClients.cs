@@ -19,8 +19,8 @@ namespace Client.Forms
             InitializeComponent();
             GetAllClients();
             FillComboBox();
-            btnDetailsClient.Visible = false;
-            dgvGetAllClients.Visible = false;
+            //btnDetailsClient.Visible = false;
+            //dgvGetAllClients.Visible = false;
         }
 
         public void GetAllClients()

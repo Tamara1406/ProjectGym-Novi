@@ -17,7 +17,7 @@ namespace SystemOperations.ClientSO
         }
         protected override void ExecuteConcreteOperation()
         {
-            repository.Delete(client, client.ClientID);
+            Result = repository.Delete(client, client.ClientID);
         }
     }
 }

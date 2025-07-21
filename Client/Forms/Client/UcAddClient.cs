@@ -32,19 +32,19 @@ namespace Client.Forms
                 Domain.Client client = new Domain.Client();
                 client.FirstName = txtFirstName.Text;
                 client.LastName = txtLastName.Text;
-                if (rdoMale.Checked)
-                {
-                    client.Gender = Gender.Muski;
-                }
-                else if (rdoFemale.Checked)
+                if (rdoFemale.Checked)
                 {
                     client.Gender = Gender.Zenski;
+                }
+                else
+                {
+                    client.Gender = Gender.Muski;
                 }
                 client.Height = Int32.Parse(txtHeight.Text);
                 client.Weight = Int32.Parse(txtWeight.Text);
                 client.Group = (Domain.Group)cmbGroup.SelectedItem;
 
-                if(cmbGroup.SelectedIndex == -1)
+                if(cmbGroup.SelectedIndex == -1 || client.FirstName == null || client.FirstName == "" || client.LastName == null || client.LastName == "" || client.Height == 0 || client.Weight == 0)
                 {
                     MessageBox.Show("Sistem ne može da kreira novog klijenta!");
                     return;

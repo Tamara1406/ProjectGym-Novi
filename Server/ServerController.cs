@@ -146,12 +146,12 @@ namespace Server
 
         public Coach DeleteCoach(Coach resToDelete, BaseSO operation)
         {
-            if (operation.Result == null)
-                throw new Exception("Ne postoji trener u bazi!");
 
             //operation = new DeleteCoachSO(resToDelete);
             this.operation = operation;
             this.operation.ExecuteOperation();
+            if (operation.Result == null)
+                throw new Exception("Ne postoji trener u bazi!");
             return (Coach)operation.Result;
         }
 
@@ -227,12 +227,12 @@ namespace Server
 
         public Client DeleteClient(Client clientToDelete, BaseSO operation)
         {
-            if (operation.Result == null)
-                throw new Exception("Ne postoji trener u bazi!");
 
             //operation = new DeleteClientSO(clientToDelete);
             this.operation = operation;
             this.operation.ExecuteOperation();
+            if (operation.Result == null)
+                throw new Exception("Ne postoji klijent u bazi!");
             return (Client)operation.Result;
         }
 
@@ -303,11 +303,11 @@ namespace Server
         public Appointment DeleteAppointment(Appointment appointmentToDelete, BaseSO operation)
         {
             //operation = new DeleteAppointmentSO(appointmentToDelete);
-            if (operation.Result == null)
-                throw new Exception("Ne postoji termin u bazi!");
 
             this.operation = operation;
             this.operation.ExecuteOperation();
+            if (operation.Result == null)
+                throw new Exception("Ne postoji termin u bazi!");
             return (Appointment)operation.Result;
         }
 
@@ -374,11 +374,11 @@ namespace Server
         public Attendance DeleteAttendance(Attendance attendanceToDelete, BaseSO operation)
         {
             //operation = new DeleteAttendanceSO(attendanceToDelete);
-            if (operation.Result == null)
-                throw new Exception("Ne postoji prisustvo u bazi!");
 
             this.operation = operation;
             this.operation.ExecuteOperation();
+            if (operation.Result == null)
+                throw new Exception("Ne postoji prisustvo u bazi!");
             return (Attendance)operation.Result;
         }
 
